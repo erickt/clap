@@ -17,7 +17,7 @@ use self::fish::FishGen;
 use self::powershell::PowerShellGen;
 pub use self::shell::Shell;
 use self::zsh::ZshGen;
-use app::parser::Parser;
+use crate::app::parser::Parser;
 
 pub struct ComplGen<'a, 'b>
 where

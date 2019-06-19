@@ -4,16 +4,16 @@ use std::ascii::AsciiExt;
 use std::fmt::Display;
 
 // Internal
-use app::parser::{ParseResult, Parser};
-use app::settings::AppSettings as AS;
-use app::usage;
-use args::settings::ArgSettings;
-use args::{AnyArg, ArgMatcher, MatchedArg};
-use errors::Result as ClapResult;
-use errors::{Error, ErrorKind};
-use fmt::{Colorizer, ColorizerOption};
-use INTERNAL_ERROR_MSG;
-use INVALID_UTF8;
+use crate::app::parser::{ParseResult, Parser};
+use crate::app::settings::AppSettings as AS;
+use crate::app::usage;
+use crate::args::settings::ArgSettings;
+use crate::args::{AnyArg, ArgMatcher, MatchedArg};
+use crate::errors::Result as ClapResult;
+use crate::errors::{Error, ErrorKind};
+use crate::fmt::{Colorizer, ColorizerOption};
+use crate::INTERNAL_ERROR_MSG;
+use crate::INVALID_UTF8;
 
 pub struct Validator<'a, 'b, 'z>(&'z mut Parser<'a, 'b>)
 where

@@ -558,11 +558,11 @@ extern crate vec_map;
 #[cfg(feature = "yaml")]
 extern crate yaml_rust;
 
-pub use app::{App, AppSettings};
-pub use args::{Arg, ArgGroup, ArgMatches, ArgSettings, OsValues, SubCommand, Values};
-pub use completions::Shell;
-pub use errors::{Error, ErrorKind, Result};
-pub use fmt::Format;
+pub use crate::app::{App, AppSettings};
+pub use crate::args::{Arg, ArgGroup, ArgMatches, ArgSettings, OsValues, SubCommand, Values};
+pub use crate::completions::Shell;
+pub use crate::errors::{Error, ErrorKind, Result};
+pub use crate::fmt::Format;
 #[cfg(feature = "yaml")]
 pub use yaml_rust::YamlLoader;
 

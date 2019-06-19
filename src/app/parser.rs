@@ -16,28 +16,28 @@ use std::path::PathBuf;
 use std::slice::Iter;
 
 // Internal
-use app::help::Help;
-use app::meta::AppMeta;
-use app::settings::AppFlags;
-use app::settings::AppSettings as AS;
-use app::usage;
-use app::validator::Validator;
-use app::App;
-use args::settings::ArgSettings;
-use args::{
+use crate::app::help::Help;
+use crate::app::meta::AppMeta;
+use crate::app::settings::AppFlags;
+use crate::app::settings::AppSettings as AS;
+use crate::app::usage;
+use crate::app::validator::Validator;
+use crate::app::App;
+use crate::args::settings::ArgSettings;
+use crate::args::{
     AnyArg, Arg, ArgGroup, ArgMatcher, Base, FlagBuilder, OptBuilder, PosBuilder, Switched,
 };
-use completions::ComplGen;
-use completions::Shell;
-use errors::Result as ClapResult;
-use errors::{Error, ErrorKind};
-use fmt::ColorWhen;
-use map::{self, VecMap};
-use osstringext::OsStrExt2;
-use suggestions;
-use SubCommand;
-use INTERNAL_ERROR_MSG;
-use INVALID_UTF8;
+use crate::completions::ComplGen;
+use crate::completions::Shell;
+use crate::errors::Result as ClapResult;
+use crate::errors::{Error, ErrorKind};
+use crate::fmt::ColorWhen;
+use crate::map::{self, VecMap};
+use crate::osstringext::OsStrExt2;
+use crate::suggestions;
+use crate::SubCommand;
+use crate::INTERNAL_ERROR_MSG;
+use crate::INVALID_UTF8;
 
 #[derive(Debug, PartialEq, Copy, Clone)]
 #[doc(hidden)]
@@ -93,7 +93,7 @@ where
 
     pub fn help_short(&mut self, s: &str) {
         let c = s
-            .trim_left_matches(|c| c == '-')
+            .trim_start_matches(|c| c == '-')
             .chars()
             .nth(0)
             .unwrap_or('h');
@@ -102,7 +102,7 @@ where
 
     pub fn version_short(&mut self, s: &str) {
         let c = s
-            .trim_left_matches(|c| c == '-')
+            .trim_start_matches(|c| c == '-')
             .chars()
             .nth(0)
             .unwrap_or('V');

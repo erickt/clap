@@ -7,9 +7,9 @@ use std::rc::Rc;
 use std::result::Result as StdResult;
 
 // Internal
-use args::{AnyArg, ArgSettings, Base, DispOrder, Switched};
-use map::{self, VecMap};
-use Arg;
+use crate::args::{AnyArg, ArgSettings, Base, DispOrder, Switched};
+use crate::map::{self, VecMap};
+use crate::Arg;
 
 #[derive(Default, Clone, Debug)]
 #[doc(hidden)]
@@ -171,7 +171,7 @@ impl<'n, 'e> PartialEq for FlagBuilder<'n, 'e> {
 #[cfg(test)]
 mod test {
     use super::FlagBuilder;
-    use args::settings::ArgSettings;
+    use crate::args::settings::ArgSettings;
 
     #[test]
     fn flagbuilder_display() {

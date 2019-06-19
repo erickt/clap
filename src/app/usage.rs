@@ -2,11 +2,11 @@
 use std::collections::{BTreeMap, VecDeque};
 
 // Internal
-use app::parser::Parser;
-use app::settings::AppSettings as AS;
-use args::settings::ArgSettings;
-use args::{AnyArg, ArgMatcher, PosBuilder};
-use INTERNAL_ERROR_MSG;
+use crate::app::parser::Parser;
+use crate::app::settings::AppSettings as AS;
+use crate::args::settings::ArgSettings;
+use crate::args::{AnyArg, ArgMatcher, PosBuilder};
+use crate::INTERNAL_ERROR_MSG;
 
 // Creates a usage string for display. This happens just after all arguments were parsed, but before
 // any subcommands have been parsed (so as to give subcommands their own usage recursively)

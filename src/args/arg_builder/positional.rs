@@ -7,10 +7,10 @@ use std::rc::Rc;
 use std::result::Result as StdResult;
 
 // Internal
-use args::{AnyArg, ArgSettings, Base, DispOrder, Valued};
-use map::{self, VecMap};
-use Arg;
-use INTERNAL_ERROR_MSG;
+use crate::args::{AnyArg, ArgSettings, Base, DispOrder, Valued};
+use crate::map::{self, VecMap};
+use crate::Arg;
+use crate::INTERNAL_ERROR_MSG;
 
 #[allow(missing_debug_implementations)]
 #[doc(hidden)]
@@ -236,8 +236,8 @@ impl<'n, 'e> PartialEq for PosBuilder<'n, 'e> {
 #[cfg(test)]
 mod test {
     use super::PosBuilder;
-    use args::settings::ArgSettings;
-    use map::VecMap;
+    use crate::args::settings::ArgSettings;
+    use crate::map::VecMap;
 
     #[test]
     fn display_mult() {

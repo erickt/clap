@@ -1,9 +1,9 @@
 use std::ffi::{OsStr, OsString};
 use std::rc::Rc;
 
-use map::VecMap;
+use crate::map::VecMap;
 
-use Arg;
+use crate::Arg;
 
 #[allow(missing_debug_implementations)]
 #[derive(Clone)]

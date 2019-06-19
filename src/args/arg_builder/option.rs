@@ -6,9 +6,9 @@ use std::rc::Rc;
 use std::result::Result as StdResult;
 
 // Internal
-use args::{AnyArg, Arg, ArgSettings, Base, DispOrder, Switched, Valued};
-use map::{self, VecMap};
-use INTERNAL_ERROR_MSG;
+use crate::args::{AnyArg, Arg, ArgSettings, Base, DispOrder, Switched, Valued};
+use crate::map::{self, VecMap};
+use crate::INTERNAL_ERROR_MSG;
 
 #[allow(missing_debug_implementations)]
 #[doc(hidden)]
@@ -227,8 +227,8 @@ impl<'n, 'e> PartialEq for OptBuilder<'n, 'e> {
 #[cfg(test)]
 mod test {
     use super::OptBuilder;
-    use args::settings::ArgSettings;
-    use map::VecMap;
+    use crate::args::settings::ArgSettings;
+    use crate::map::VecMap;
 
     #[test]
     fn optbuilder_display1() {
